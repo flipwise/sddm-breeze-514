@@ -19,7 +19,7 @@
  */
 
 import QtQuick 2.8
-
+import QtGraphicalEffects 1.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
@@ -54,6 +54,16 @@ Item {
             bottom: parent.bottom
             horizontalCenter: parent.horizontalCenter
         }
+        
+    //Draw a slightly translucent background circle under the user picture
+    Rectangle {
+        visible: config.DrawCircleBehindAvatar || false
+        anchors.centerIn: imageSource
+        width: imageSource.width 
+        height: width
+        color: PlasmaCore.ColorScope.backgroundColor
+        opacity: 0.9
+    }
 
         //Image takes priority, taking a full path to a file, if that doesn't exist we show an icon
         Image {
@@ -153,6 +163,18 @@ Item {
         font.pointSize: config.FontSize || "10"
     }
 
+    DropShadow {
+        visible: config.TextShadowsVisible || false
+        anchors.fill: usernameDelegate
+        source: usernameDelegate
+        horizontalOffset: 1
+        verticalOffset: 1
+        radius: 3
+        samples: 7
+        spread: 0.35
+        color: "black"
+    }
+    
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true

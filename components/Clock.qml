@@ -19,9 +19,26 @@
 
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
-
+import QtGraphicalEffects 1.0
 import org.kde.plasma.core 2.0
 import org.kde.plasma.components 2.0
+
+Item {
+    width: clock.implicitWidth
+    height: clock.implicitHeight
+
+    DropShadow {
+        id: clockShadow
+        visible: config.TextShadowsVisible || false
+        anchors.fill: clock
+        source: clock
+        horizontalOffset: 1
+        verticalOffset: 1
+        radius: 4
+        samples: 9
+        spread: 0.35
+        color: "black"
+    }
 
 ColumnLayout {
     id: clock
@@ -44,5 +61,6 @@ ColumnLayout {
         engine: "time"
         connectedSources: ["Local"]
         interval: 1000
+        }   
     }
 }

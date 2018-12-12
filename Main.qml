@@ -110,28 +110,9 @@ PlasmaCore.ColorScope {
             clock: clock
         }
 
-        DropShadow {
-            id: clockShadow
-            anchors.fill: clock
-            source: clock
-            horizontalOffset: 0
-            verticalOffset: 1
-            radius: 12
-            samples: 32
-            spread: 0.2
-            color: Qt.rgba(0, 0, 0, 1)
-            Behavior on opacity {
-                OpacityAnimator {
-                    duration: 1000
-                    easing.type: Easing.InOutQuad
-                }
-            }
-        }
-
         Clock {
             id: clock
             visible: y > 1
-            property Item shadow: clockShadow
             y: (userListComponent.userList.y + mainStack.y)/2 - height/2
             anchors.horizontalCenter: parent.horizontalCenter
         }
@@ -366,10 +347,23 @@ PlasmaCore.ColorScope {
                 ]
             }
         }
+    
+        Rectangle {
+        visible: config.PanelVisible || false
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
 
+        }
+        height: footerLayout.implicitHeight + (units.smallSpacing * 2)
+        color: PlasmaCore.ColorScope.backgroundColor
+        opacity: 0.9
+        }
+        
         //Footer
         RowLayout {
-            id: footer
+            id: footerLayout
             anchors {
                 bottom: parent.bottom
                 left: parent.left

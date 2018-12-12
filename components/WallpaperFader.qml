@@ -108,16 +108,12 @@ Item {
                 opacity: 1
             }
             PropertyChanges {
-                target: footer
+                target: footerLayout
                 opacity: 1
             }
             PropertyChanges {
                 target: wallpaperFader
                 factor: config.WallpaperFaderStrength || "1"
-            }
-            PropertyChanges {
-                target: clock.shadow
-                opacity: 0
             }
         },
         State {
@@ -127,16 +123,12 @@ Item {
                 opacity: 0
             }
             PropertyChanges {
-                target: footer
+                target: footerLayout
                 opacity: 0
             }
             PropertyChanges {
                 target: wallpaperFader
                 factor: 0
-            }
-            PropertyChanges {
-                target: clock.shadow
-                opacity: 1
             }
         }
     ]
@@ -153,7 +145,7 @@ Item {
                     easing.type: Easing.InOutQuad
                 }
                 NumberAnimation {
-                    target: footer
+                    target: footerLayout
                     property: "opacity"
                     duration: units.longDuration
                     easing.type: Easing.InOutQuad
@@ -171,7 +163,7 @@ Item {
                     easing.type: Easing.InOutQuad
                 }
                 NumberAnimation {
-                    target: footer
+                    target: footerLayout
                     property: "opacity"
                     duration: 500
                     easing.type: Easing.InOutQuad

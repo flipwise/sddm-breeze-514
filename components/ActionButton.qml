@@ -20,6 +20,7 @@
 import QtQuick 2.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtGraphicalEffects 1.0
 
 Item {
     id: root
@@ -37,6 +38,7 @@ Item {
     implicitHeight: iconSize + units.smallSpacing + label.implicitHeight
 
     PlasmaCore.IconItem {
+        z:100
         id: icon
         anchors {
             top: parent.top
@@ -47,6 +49,19 @@ Item {
 
         colorGroup: PlasmaCore.ColorScope.colorGroup
         active: mouseArea.containsMouse || root.activeFocus
+    }
+    
+    // Draw a slightly translucent background circle under the icons
+    Rectangle {
+        id: iconCircle
+        visible: config.DrawCircleBehindActionIcons || false
+        z:1
+        anchors.centerIn: icon
+        width: icon.width 
+        height: icon.height
+        radius: width
+        color: PlasmaCore.ColorScope.backgroundColor
+        opacity: 0.9
     }
     
     PlasmaComponents.Label {
@@ -64,6 +79,18 @@ Item {
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferNoHinting"
         font.pointSize: config.FontSize || "10"
+    }
+    
+    DropShadow {
+        visible: config.TextShadowsVisible || false
+        anchors.fill: label
+        source: label
+        horizontalOffset: 1
+        verticalOffset: 1
+        radius: 4
+        samples: 9
+        spread: 0.3
+        color: "black"
     }
 
     MouseArea {
