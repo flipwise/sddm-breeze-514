@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2 - [12-12-2018 ]
+- revert "Log In button text will always be 1pt smaller than the other text", did not work as intended
+
 ## 0.2.1 - [12-12-2018 ]
 - Log In button text will always be 1pt smaller than the other text, as is in upstream
 - fix typo in theme.conf
