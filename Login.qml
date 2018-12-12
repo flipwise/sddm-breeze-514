@@ -105,7 +105,7 @@ SessionManagementScreen {
         
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferNoHinting"
-        font.pointSize: (config.FontSize) - 1 || "9"
+        font.pointSize: config.FontSize || "9"
         
 
         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
