@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3 - [16-12-2018]
+- fix username looking blurry sometimes
+- (theming) expand the action button circles radius a little (note: may look big in sddm tester, but in real life it's OK)
+- (theming) expand the clock's shadow just a notch so it doesn't look so tight
+
 ## 0.2.2 - [12-12-2018 ]
 - revert "Log In button text will always be 1pt smaller than the other text", did not work as intended
 
