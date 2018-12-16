@@ -36,9 +36,19 @@ Item {
 
     implicitWidth: Math.max(iconSize + units.largeSpacing * 2, label.contentWidth)
     implicitHeight: iconSize + units.smallSpacing + label.implicitHeight
+    
+    Rectangle {
+        id: iconCircle
+        visible: config.DrawCircleBehindActionIcons || false
+        anchors.centerIn: icon
+        width: icon.width + units.smallSpacing
+        height: icon.height + units.smallSpacing
+        radius: width
+        color: PlasmaCore.ColorScope.backgroundColor
+        opacity: 0.9
+    }
 
     PlasmaCore.IconItem {
-        z:100
         id: icon
         anchors {
             top: parent.top
@@ -49,19 +59,6 @@ Item {
 
         colorGroup: PlasmaCore.ColorScope.colorGroup
         active: mouseArea.containsMouse || root.activeFocus
-    }
-    
-    // Draw a slightly translucent background circle under the icons
-    Rectangle {
-        id: iconCircle
-        visible: config.DrawCircleBehindActionIcons || false
-        z:1
-        anchors.centerIn: icon
-        width: icon.width 
-        height: icon.height
-        radius: width
-        color: PlasmaCore.ColorScope.backgroundColor
-        opacity: 0.9
     }
     
     PlasmaComponents.Label {

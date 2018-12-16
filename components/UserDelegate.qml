@@ -48,8 +48,8 @@ Item {
 
     Item {
         id: imageSource
-        width: faceSize
-        height: faceSize
+        width: faceSize 
+        height: faceSize 
         anchors {
             bottom: parent.bottom
             horizontalCenter: parent.horizontalCenter
@@ -59,7 +59,7 @@ Item {
     Rectangle {
         visible: config.DrawCircleBehindAvatar || false
         anchors.centerIn: imageSource
-        width: imageSource.width 
+        width: imageSource.width
         height: width
         color: PlasmaCore.ColorScope.backgroundColor
         opacity: 0.9
@@ -143,7 +143,17 @@ Item {
         "
     }
 
-
+    DropShadow {
+        visible: config.TextShadowsVisible || false
+        anchors.fill: usernameDelegate
+        source: usernameDelegate
+        horizontalOffset: 1
+        verticalOffset: 1
+        radius: 3
+        samples: 7
+        spread: 0.35
+        color: "black"
+    }
 
     PlasmaComponents.Label {
         id: usernameDelegate
@@ -161,18 +171,6 @@ Item {
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
         font.pointSize: config.FontSize || "10"
-    }
-
-    DropShadow {
-        visible: config.TextShadowsVisible || false
-        anchors.fill: usernameDelegate
-        source: usernameDelegate
-        horizontalOffset: 1
-        verticalOffset: 1
-        radius: 3
-        samples: 7
-        spread: 0.35
-        color: "black"
     }
     
     MouseArea {

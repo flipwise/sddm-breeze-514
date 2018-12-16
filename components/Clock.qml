@@ -34,8 +34,8 @@ Item {
         source: clock
         horizontalOffset: 1
         verticalOffset: 1
-        radius: 4
-        samples: 9
+        radius: 5
+        samples: 12
         spread: 0.35
         color: "black"
     }
