@@ -9,13 +9,13 @@ PlasmaComponents.ToolButton {
     id: keyboardButton
 
     property int currentIndex: -1
-    
+
     font.family: config.Font || "Noto Sans"
     font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
-    font.pointSize: config.FontSize || "10"
+    font.pointSize: config.FontSize || "9"
 
     text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: %1",
-                
+
     instantiator.objectAt(currentIndex).shortName)
     implicitWidth: minimumWidth
 
@@ -25,7 +25,8 @@ PlasmaComponents.ToolButton {
 
     menu: QQC.Menu {
         id: keyboardMenu
-            
+        style: BreezeMenuStyle {}
+
         Instantiator {
             id: instantiator
             model: keyboard.layouts

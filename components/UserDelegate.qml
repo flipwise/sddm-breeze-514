@@ -54,7 +54,7 @@ Item {
             bottom: parent.bottom
             horizontalCenter: parent.horizontalCenter
         }
-        
+
     //Draw a slightly translucent background circle under the user picture
     Rectangle {
         visible: config.DrawCircleBehindAvatar || false
@@ -170,9 +170,9 @@ Item {
         font.underline: wrapper.activeFocus
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
-        font.pointSize: config.FontSize || "10"
+        font.pointSize: config.FontSize || "9"
     }
-    
+
     MouseArea {
         anchors.fill: parent
         hoverEnabled: true

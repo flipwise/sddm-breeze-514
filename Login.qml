@@ -11,7 +11,7 @@ SessionManagementScreen {
     property Item mainPasswordBox: passwordBox
 
     property bool showUsernamePrompt: !showUserList
-    
+
     property int usernameFontSize
 
     property string lastUserName
@@ -50,8 +50,8 @@ SessionManagementScreen {
         text: lastUserName
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
-        font.pointSize: config.FontSize || "10"
-        
+        font.pointSize: config.FontSize || "9"
+
         visible: showUsernamePrompt
         focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Username")
@@ -62,10 +62,10 @@ SessionManagementScreen {
     PlasmaComponents.TextField {
         id: passwordBox
         Layout.fillWidth: true
-        
+
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
-        font.pointSize: config.FontSize || "10"
+        font.pointSize: config.FontSize || "9"
 
         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
         focus: !showUsernamePrompt || lastUserName
@@ -102,11 +102,11 @@ SessionManagementScreen {
     PlasmaComponents.Button {
         id: loginButton
         Layout.fillWidth: true
-        
+
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferNoHinting"
         font.pointSize: config.FontSize || "9"
-        
+
 
         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
         onClicked: startLogin();

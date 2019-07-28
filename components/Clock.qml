@@ -61,6 +61,6 @@ ColumnLayout {
         engine: "time"
         connectedSources: ["Local"]
         interval: 1000
-        }   
+        }
     }
 }

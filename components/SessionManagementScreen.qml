@@ -93,7 +93,7 @@ Item {
             font.italic: true
             font.family: config.Font || "Noto Sans"
             font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
-            font.pointSize: config.FontSize || "10"
+            font.pointSize: config.FontSize || "9"
         }
         ColumnLayout {
             Layout.minimumHeight: implicitHeight

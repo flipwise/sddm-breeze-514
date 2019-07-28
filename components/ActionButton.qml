@@ -36,7 +36,7 @@ Item {
 
     implicitWidth: Math.max(iconSize + units.largeSpacing * 2, label.contentWidth)
     implicitHeight: iconSize + units.smallSpacing + label.implicitHeight
-    
+
     Rectangle {
         id: iconCircle
         visible: config.DrawCircleBehindActionIcons || false
@@ -60,7 +60,7 @@ Item {
         colorGroup: PlasmaCore.ColorScope.colorGroup
         active: mouseArea.containsMouse || root.activeFocus
     }
-    
+
     PlasmaComponents.Label {
         id: label
         anchors {
@@ -75,9 +75,9 @@ Item {
         font.underline: root.activeFocus
         font.family: config.Font || "Noto Sans"
         font.hintingPreference: config.FontHinting || "PreferNoHinting"
-        font.pointSize: config.FontSize || "10"
+        font.pointSize: config.FontSize || "9"
     }
-    
+
     DropShadow {
         visible: config.TextShadowsVisible || false
         anchors.fill: label

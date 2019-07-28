@@ -31,10 +31,10 @@ PlasmaComponents.ToolButton {
     implicitWidth: minimumWidth
 
     visible: menu.items.length > 1
-    
+
     font.family: config.Font || "Noto Sans"
     font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
-    font.pointSize: config.FontSize || "10"
+    font.pointSize: config.FontSize || "9"
 
     text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Desktop Session: %1", instantiator.objectAt(currentIndex).text || "")
 
@@ -44,6 +44,8 @@ PlasmaComponents.ToolButton {
 
     menu: QQC.Menu {
         id: menu
+        style: BreezeMenuStyle {}
+
         Instantiator {
             id: instantiator
             model: sessionModel

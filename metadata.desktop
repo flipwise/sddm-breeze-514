@@ -1,11 +1,11 @@
 [SddmGreeterTheme]
 Name=Breeze 5.14 Extended
 Description=Breeze 5.14 theme with many configuration options
-Author=David Edmundson, Filip Fila
-Copyright=(c) 2014, David Edmundson; 2018, Filip Fila
+Author=David Edmundson (Breeze) & Filip Fila (modifications)
+Copyright=(c) 2014, David Edmundson; 2019, Filip Fila
 License=CC-BY-SA
 Type=sddm-theme
-Version=0.2.3
+Version=0.2.4
 Website=https://github.com/flipwise/sddm-breeze-514
 Screenshot=preview.png
 MainScript=Main.qml

@@ -31,6 +31,7 @@ PlasmaComponents.ToolButton {
     implicitWidth: minimumWidth
     text: layout.currentLayoutDisplayName
     font.family: config.Font || "Noto Sans"
+    font.pointSize: config.FontSize || "9"
     font.hintingPreference: config.FontHinting || "PreferDefaultHinting"
 
     Accessible.name: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to change keyboard layout", "Switch layout")

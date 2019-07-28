@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.4 - [14-6-2019]
+- menus are now Breeze styled
+- remove whitespace
+- set the default font size to 9pt because that's what it was like in 5.14
+
 ## 0.2.3 - [16-12-2018]
 - fix username looking blurry sometimes
 - (theming) expand the action button circles radius a little (note: may look big in sddm tester, but in real life it's OK)

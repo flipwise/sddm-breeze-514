@@ -37,7 +37,7 @@ PlasmaCore.ColorScope {
     height: config.ScreenHeight || "900"
 
     property string notificationMessage
-    
+
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
@@ -143,7 +143,7 @@ PlasmaCore.ColorScope {
                 userListModel: userModel
                 userListCurrentIndex: userModel.lastIndex >= 0 ? userModel.lastIndex : 0
                 lastUserName: userModel.lastUser
-                
+
                 showUserList: {
                     if ( !userListModel.hasOwnProperty("count")
                     || !userListModel.hasOwnProperty("disableAvatarsThreshold"))
@@ -347,7 +347,7 @@ PlasmaCore.ColorScope {
                 ]
             }
         }
-    
+
         Rectangle {
         visible: config.PanelVisible || false
         anchors {
@@ -360,7 +360,7 @@ PlasmaCore.ColorScope {
         color: PlasmaCore.ColorScope.backgroundColor
         opacity: 0.9
         }
-        
+
         //Footer
         RowLayout {
             id: footerLayout
